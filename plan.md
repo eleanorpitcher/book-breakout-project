@@ -1,12 +1,12 @@
 ## Steps for plan
 
 [x] Decide the game
-[] Plan your project (what images do you need)
-[] Define MVP (minimal viable product/project) - that will be defined by the requirements
-[] Define what the extras are and how to prioritise them
+[x] Plan your project (what images do you need)
+[x] Define MVP (minimal viable product/project) - that will be defined by the requirements
+[x] Define what the extras are and how to prioritise them
 [x] Create the folder structure
-[] Create the files
-[] Start coding
+[x] Create the files
+[x] Start coding
 
 ## Steps for MVP
 
@@ -20,7 +20,7 @@
 
 ## Plan
 
-[] Create the game board (full screen, mobile, etc.)
+[x] Create the game board (full screen, mobile, etc.)
 [] Make the player appear on the screen
 [] Create the logic for the player to move
 [] Make the player move with arrow keys

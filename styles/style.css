@@ -1,13 +1,75 @@
-/* body {
-    margin-top: 70;
-    padding-top: 70;
-} */
+body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1 {
+    font-size: 70px;
+    font-weight: 900;
+    text-align: center;
+    color: maroon;
+    margin: 0px 20px;
+}
+
+#game-intro p {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    position: absolute;
+}
+
+p {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: 700;
+    overflow: hidden;
+}
 
 #board {
-    display: block;
-    width: 80vw;
-    height: 80vh;
-    margin: auto;
-    top: 50%;
-    opacity: 0.6;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 85vh;
+    opacity: 0.4;
+}
+
+#start-button {
+    background-color: maroon;
+    border: none;
+    padding: 15px;
+    font-size: 20px;
+    color: white;
+}
+
+#game-score {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 90%;
+    top: 0%;
+    width: 100px;
+    height: 50px;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    background-color: maroon;
+    color: white;
+}
+
+#game-container {
+    display: none;
+}
+
+#game-end {
+    display: none;
+
 }
