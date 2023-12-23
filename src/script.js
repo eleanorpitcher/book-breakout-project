@@ -7,7 +7,7 @@ window.onload = function () {
     });
 
     function startGame() {
-        console.log("start game")
+        // console.log("start game")
 
         game = new Game()
         game.start()
@@ -15,19 +15,46 @@ window.onload = function () {
 
     window.addEventListener('keydown',(event) => {
         if (event.key === "ArrowUp"){
-            game.player.directionY = -1;
+            // console.log('move up')
+            game.player.moveUp()
         }
         else if(event.key === "ArrowDown"){
-            game.player.directionY = +1;
+            // console.log('move down')
+            game.player.moveDown()
         }
         else if(event.key === "ArrowLeft"){
-            game.player.directionX = -1;
+            // console.log('move left')
+            game.player.moveLeft()
         }
         else if (event.key === "ArrowRight"){
-            game.player.directionX = +1
+            // console.log('move right')
+            game.player.moveRight()
         }
     })
 }
+
+let newGame
+
+const reStartButtonWin = document.getElementById('restart-btn-win')
+reStartButtonWin.addEventListener('click', ()=> {
+    restartGame()
+})
+
+const reStartButtonLose = document.getElementById('restart-btn-lose')
+reStartButtonLose.addEventListener('click', ()=> {
+    restartGame()
+})
+
+function restartGame(){
+    console.log('restart game')
+
+    let newGame = new Game()
+    window.location.reload()
+    newGame.start()
+}
+
+
+
 
 
 

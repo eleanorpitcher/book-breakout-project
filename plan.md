@@ -21,9 +21,9 @@
 ## Plan
 
 [x] Create the game board (full screen, mobile, etc.)
-[] Make the player appear on the screen
-[] Create the logic for the player to move
-[] Make the player move with arrow keys
+[x] Make the player appear on the screen
+[x] Create the logic for the player to move
+[x] Make the player move with arrow keys
 [] Create an obstacle
 [] Move the obstacle
 [] Create multiple obstacles?

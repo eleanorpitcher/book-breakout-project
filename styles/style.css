@@ -67,9 +67,55 @@ p {
 
 #game-container {
     display: none;
+    justify-content: center;
 }
 
-#game-end {
+#loser {
     display: none;
+    position: relative;
+    text-align: center;
+}
 
+#loser-h1 {
+    font-size: 100px;
+    position: absolute;
+    animation-name:blink;
+    animation-duration: 1s;
+    animation-timing-function:ease-in;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0%{color:red}
+    50%{color:white}
+    100%{color:red}
+}
+
+#winner {
+    display: none;
+    justify-content: center;
+}
+
+#winner-h1{
+    font-size: 100px;
+    position: absolute;
+    transform: rotate(-90deg)
+}
+
+#restart-btn-win{
+    position: absolute;
+    background-color: maroon;
+    border: none;
+    padding: 15px;
+    font-size: 20px;
+    color: white;
+}
+
+#restart-btn-lose{
+    position: absolute;
+    background-color: maroon;
+    border: none;
+    padding: 15px;
+    font-size: 20px;
+    color: white;
 }
