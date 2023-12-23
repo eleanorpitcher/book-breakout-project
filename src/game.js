@@ -7,11 +7,11 @@ class Game {
         
         this.player = new Player(
             this.gameContainer,
-            "images/student-2.jpeg",
-            100,
-            300,
-            150,
-            150,
+            "images/student-6.png",
+            // 100,
+            // 300,
+            // 150,
+            // 150,
         );
 
         this.obstacles = []
@@ -40,11 +40,11 @@ class Game {
             if (obstacleCount < 3) {
                 const obstacle = new Obstacle (
                     this.gameContainer,
-                    "images/librarian.jpeg",
-                    100,
-                    300,
-                    100,
-                    100,
+                    "images/librarian-3.webp",
+                    // 100,
+                    // 300,
+                    // 100,
+                    // 100,
                 );
                 this.obstacles.push(obstacle)
                 obstacleCount++
@@ -60,7 +60,7 @@ class Game {
                 obstacle.moveRandomly()
                 this.detectCollision(obstacle.obstacle)
             })
-        }, 1000)
+        }, 500)
     }
 
     createBooks(){
@@ -88,7 +88,7 @@ class Game {
                 this.gameContainer.style.display = 'none'
                 this.winnerDisplay.style.display = 'block'
             }
-        }, 1000)
+        }, 500)
     }
 
     collectPoints(book){
@@ -131,7 +131,7 @@ class Player {
     constructor(gameContainer, imgSrc){
         this.gameContainer = gameContainer; //with this we can appendChild and put the player inside of the gameContainer div
         this.imgSrc = imgSrc;
-        this.width = 10;
+        this.width = 5;
         this.height = 20;
         this.positionX = 50;
         this.positionY = 50;
@@ -180,7 +180,7 @@ class Obstacle {
         this.gameContainer = gameContainer;
         this.imgSrc = imgSrc;
         this.width = 10
-        this.height = 20;
+        this.height = 15;
         this.positionX = 20;
         this.positionY = 20;
 
@@ -207,17 +207,17 @@ class Obstacle {
         let randomDirection = Math.floor(Math.random() * (360))
 
         if (randomDirection >= 0 && randomDirection <= 90){
-            this.positionY -= 2
-            this.positionX += 2
+            this.positionY -= 5
+            this.positionX += 5
         } else if (randomDirection >= 91 && randomDirection <= 180){
-            this.positionY -= 2
+            this.positionY += 2
             this.positionX += 2
         } else if (randomDirection >= 181 && randomDirection <= 270){
-            this.positionY += 2
+            this.positionY -= 2
             this.positionX -= 2
         } else if (randomDirection >= 271 && randomDirection <= 360){
-            this.positionY -= 2
-            this.positionX += 2
+            this.positionY += 2
+            this.positionX -= 2
         }
 
         this.obstacle.style.left = `${this.positionX}vw`
@@ -230,7 +230,7 @@ class Book {
     constructor(gameContainer, imgSrc){
         this.gameContainer = gameContainer
         this.imgSrc = imgSrc
-        this.width = 2
+        this.width = 3
         this.height = 5
         this.positionX = Math.floor(Math.random() * (100 - this.width +1));
         this.positionY = Math.floor(Math.random() * (100 - this.height +1));
