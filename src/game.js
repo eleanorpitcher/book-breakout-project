@@ -199,7 +199,7 @@ class Obstacle {
         obstacle.style.top = `${this.positionY}vh`;
 
         this.gameContainer.appendChild(obstacle)
-        return obstacle 
+        return obstacle
     }
 
 
