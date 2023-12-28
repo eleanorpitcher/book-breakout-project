@@ -71,18 +71,25 @@ p {
 }
 
 #loser {
-    display: none;
+    display: flex;
     position: relative;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    flex-direction: column;
 }
 
 #loser-h1 {
-    font-size: 100px;
     position: absolute;
-    animation-name:blink;
+    font-size: 100px;
+    margin: 0;
+    animation-name: blink;
     animation-duration: 1s;
     animation-timing-function:ease-in;
     animation-iteration-count: infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @keyframes blink {
@@ -92,18 +99,32 @@ p {
 }
 
 #winner {
-    display: none;
+    display: flex;
+    position: relative;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
 }
 
 #winner-h1{
-    font-size: 100px;
     position: absolute;
-    transform: rotate(-90deg)
+    font-size: 100px;
+    margin: 0;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function:ease-in;
+    animation-iteration-count: infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #restart-btn-win{
     position: absolute;
+    transform: translate(-50%, -50%);
+    top: 80%;
+    left: 50%;
     background-color: maroon;
     border: none;
     padding: 15px;
@@ -113,6 +134,9 @@ p {
 
 #restart-btn-lose{
     position: absolute;
+    transform: translate(-50%, -50%);
+    top: 80%;
+    left: 50%;
     background-color: maroon;
     border: none;
     padding: 15px;

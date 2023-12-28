@@ -88,7 +88,7 @@ class Game {
                 this.gameContainer.style.display = 'none'
                 this.winnerDisplay.style.display = 'block'
             }
-        }, 500)
+        }, 250)
     }
 
     collectPoints(book){
@@ -104,6 +104,7 @@ class Game {
             this.scoreCount++
             console.log(this.scoreCount)
             this.updateCounter()
+            book.style.display = 'none';
         }
     }
 

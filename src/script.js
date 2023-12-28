@@ -1,6 +1,14 @@
+this.loserDisplay = document.getElementById("loser");
+this.winnerDisplay = document.getElementById("winner")
+
 window.onload = function () {
+    this.loserDisplay.style.display = 'none';
+    this.winnerDisplay.style.display = 'none';
+
     const startButton = document.getElementById("start-button")
-    let game
+    let game;
+
+
 
     startButton.addEventListener('click', function() {
         startGame()
