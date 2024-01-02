@@ -62,6 +62,10 @@ function restartGame(){
 }
 
 
+// const canvas = document.getElementById('canvas')
+const canvasWidth = 1100;
+const canvasHeight = 600;
+
 
 
 

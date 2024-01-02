@@ -1,3 +1,7 @@
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
 class Game {
     constructor(){
         this.gameIntro = document.getElementById("game-intro");
@@ -8,10 +12,6 @@ class Game {
         this.player = new Player(
             this.gameContainer,
             "images/student-6.png",
-            // 100,
-            // 300,
-            // 150,
-            // 150,
         );
 
         this.obstacles = []
@@ -32,6 +32,8 @@ class Game {
         this.moveObstacles()
         this.createBooks()
         this.booksScore()
+        // insideBoard()
+        insideBoard()
     }
 
     createObstacles(){
@@ -41,10 +43,6 @@ class Game {
                 const obstacle = new Obstacle (
                     this.gameContainer,
                     "images/librarian-3.webp",
-                    // 100,
-                    // 300,
-                    // 100,
-                    // 100,
                 );
                 this.obstacles.push(obstacle)
                 obstacleCount++
@@ -134,8 +132,8 @@ class Player {
         this.imgSrc = imgSrc;
         this.width = 5;
         this.height = 20;
-        this.positionX = 50;
-        this.positionY = 50;
+        this.positionX = 50 ;
+        this.positionY = 50 ;
 
         this.player = this.createPlayer()
     }
@@ -174,6 +172,26 @@ class Player {
         this.positionY +=4
         this.player.style.top = `${this.positionY}vh`
     }
+
+    insideBoard(){
+        let boardWidth = canvas.width
+        let boardHeight = canvas.height
+        
+
+        if(this.positionX < 0) {
+            this.positionX = 0;
+            console.log('1',boardWidth)
+        } else if (this.positionX > boardWidth){
+            this.positionX = boardWidth;
+            console.log('2',boardWidth)
+        
+        if(this.positionY < 0) {
+            this.positionY = 0;
+        } else if (this.positionY > boardHeight) {
+            this.positionY = boardHeight
+        }
+        }
+    }
 }
 
 class Obstacle {
@@ -205,20 +223,20 @@ class Obstacle {
 
 
     moveRandomly(){
-        let randomDirection = Math.floor(Math.random() * (360))
+        let randomDirection = Math.floor(Math.random() * 4)
 
-        if (randomDirection >= 0 && randomDirection <= 90){
+        if (randomDirection >= 0 && randomDirection <= 1){
             this.positionY -= 5
             this.positionX += 5
-        } else if (randomDirection >= 91 && randomDirection <= 180){
-            this.positionY += 2
-            this.positionX += 2
-        } else if (randomDirection >= 181 && randomDirection <= 270){
-            this.positionY -= 2
-            this.positionX -= 2
-        } else if (randomDirection >= 271 && randomDirection <= 360){
-            this.positionY += 2
-            this.positionX -= 2
+        } else if (randomDirection >= 1 && randomDirection <= 2){
+            this.positionY += 5
+            this.positionX += 5
+        } else if (randomDirection >= 2 && randomDirection <= 3){
+            this.positionY -= 5
+            this.positionX -= 5
+        } else if (randomDirection >= 3 && randomDirection <= 4){
+            this.positionY += 5
+            this.positionX -= 5
         }
 
         this.obstacle.style.left = `${this.positionX}vw`
@@ -233,8 +251,10 @@ class Book {
         this.imgSrc = imgSrc
         this.width = 3
         this.height = 5
-        this.positionX = Math.floor(Math.random() * (100 - this.width +1));
-        this.positionY = Math.floor(Math.random() * (100 - this.height +1));
+        // this.positionX = Math.floor(Math.random() * (100 - this.width +1));
+        this.positionX = Math.floor(Math.random()* (100 - this.width +1))
+        // this.positionY = Math.floor(Math.random() * (100 - this.height +1));
+        this.positionY = Math.floor(Math.random()* (100 - this.height +1))
 
         this.book = this.designBooks()
     }
@@ -254,9 +274,3 @@ class Book {
         return book 
     }
 }
-
-
-
-
-
-

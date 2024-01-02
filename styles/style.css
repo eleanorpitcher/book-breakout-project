@@ -37,9 +37,19 @@ p {
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 85vh;
-    opacity: 0.4;
+    height: 600px;
+    width: auto;
+    opacity: 0.4; */
 }
+
+/* #canvas {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: bisque 
+} */
 
 #start-button {
     background-color: maroon;
